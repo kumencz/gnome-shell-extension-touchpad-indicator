@@ -144,7 +144,7 @@ Synclient.prototype = {
     _disable: function() {
         logging('Synclient._disable()');
         this._cancel();
-        if (Lib.execute_async('synclient TouchpadOff=1')) {
+        if (Lib.execute_async('synclient AreaTopEdge=5000')) {
             this.stop = false;
             this._watch();
             return false;
@@ -155,7 +155,7 @@ Synclient.prototype = {
     _enable: function() {
         logging('Synclient._enable()');
         this._cancel();
-        if (Lib.execute_async('synclient TouchpadOff=0')) {
+        if (Lib.execute_async('synclient AreaTopEdge=2600')) {
             this.stop = false;
             this._watch();
             return true;
